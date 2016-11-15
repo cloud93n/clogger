@@ -22,10 +22,10 @@ static inline char *timenow();
 //shorten file path
 #define _FILE strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__
 
-#define NO_LOG          0x00
-#define ERROR_LEVEL     0x01
-#define INFO_LEVEL      0x02
-#define DEBUG_LEVEL     0x03
+#define NO_LOG          0
+#define ERROR_LEVEL     1
+#define INFO_LEVEL      2
+#define DEBUG_LEVEL     3
 
 #ifndef LOG_LEVEL
 #define LOG_LEVEL   DEBUG_LEVEL
@@ -41,11 +41,12 @@ static inline char *timenow();
 //function to print expression and identifier
 // use _()
 #ifdef PRINT_VAR
-#define _(x) std::cout << #x << std::endl; x
+#define _(x) std::cout << #x << " = " << x << std::endl; 
 #else
 #define _(x) x
 
 #endif //log_level==debug_level
+
 
 #define PRINTFUNCTION(format, ...)      fprintf(stderr, format, ##__VA_ARGS__)
 

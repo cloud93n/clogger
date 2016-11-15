@@ -10,7 +10,7 @@
 
 int main(int argc, const char * argv[]) {
 
-    _(LOG_DEBUG("Maybe i can touch this button...");)
+    LOG_DEBUG("Maybe i can touch this button...");
 
     LOG_INFO("Pressure is dropping...");
 
@@ -18,6 +18,10 @@ int main(int argc, const char * argv[]) {
 
     int going_down = 1;
     LOG_IF_ERROR(going_down, "i'm going down... if only i had used macro-logger...");
+
+    int i = 0;
+    _(++i);
+    std::cout << i;
 
     return 0;
 }
