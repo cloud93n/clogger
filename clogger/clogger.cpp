@@ -5,6 +5,7 @@
 #include <stdio.h>
 #define LOG_LEVEL -1
 #define PRINT_VAR
+#define CATCH_ERROR
 #include "clogger.h"
 
 
@@ -22,6 +23,9 @@ int main(int argc, const char * argv[]) {
     int i = 0;
     _(++i);
     std::cout << i;
-
+    CATCH(
+        int i;
+        
+    )
     return 0;
 }
